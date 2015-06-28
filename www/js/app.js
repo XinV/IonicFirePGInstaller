@@ -47,7 +47,7 @@ angular.module('bucketList', ['ionic', 'firebase', 'bucketList.controllers'])
                 if (error) {
                     // no action yet.. redirect to default route
                     $rootScope.userEmail = null;
-                    $window.location.href = '#/auth/signin';
+                    $window.location.href = '#/bucket/list';
                 } else if (user) {
                     // user authenticated with Firebase
                     $rootScope.userEmail = user.email;
@@ -55,7 +55,7 @@ angular.module('bucketList', ['ionic', 'firebase', 'bucketList.controllers'])
                 } else {
                     // user is logged out
                     $rootScope.userEmail = null;
-                    $window.location.href = '#/auth/signin';
+                    $window.location.href = '#/bucket/list';
                 }
             });
         }
@@ -110,5 +110,5 @@ angular.module('bucketList', ['ionic', 'firebase', 'bucketList.controllers'])
                 }
             }
         })
-    $urlRouterProvider.otherwise('/auth/signin');
+    $urlRouterProvider.otherwise('/bucket/list');
 });
