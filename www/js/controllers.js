@@ -81,7 +81,7 @@ angular.module('bucketList.controllers', [])
 .controller('myListCtrl', function($rootScope, $scope, $window, $ionicModal, $firebase) {
     $rootScope.show("Please wait... Processing");
     $scope.list = [];
-    var bucketListRef = new Firebase($rootScope.baseUrl + "feed");
+    var bucketListRef = new Firebase('https://pebblecontrolsea.firebaseio.com/' + "feed");
     bucketListRef.on('value', function(snapshot) {
         var data = snapshot.val();
         console.log("data:", data);
